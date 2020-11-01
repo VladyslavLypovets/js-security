@@ -22,7 +22,3 @@ worker.addEventListener('message', function(e) {
   p.appendChild(node);
   logs.appendChild(p);
 }, false);
-
-
-
-
