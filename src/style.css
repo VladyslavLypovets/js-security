@@ -13,17 +13,29 @@
 
 textarea {
   width: 40%;
-  height: 200px;
+  height: 300px;
   resize: unset;
   padding: 15px;
 }
 
 .logs {
   width: 55%;
-  max-height: 200px;
+  max-height: 300px;
   overflow-y: auto;
 }
 
 .logs h2 {
   margin: 0;
+  margin-bottom: 20px;
+}
+
+.logs p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.logs p.danger {
+  color: #dc3545;
+}
+.logs p.success {
+  color: #28a745;
 }

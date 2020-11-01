@@ -1,6 +1,6 @@
 const textArea = document.getElementById('textarea');
 const logs = document.getElementById('logs');
-const worker = new Worker("./worker.js");
+const worker = new Worker("./src/worker.js");
 let textAreaModified = false;
 
 textArea.addEventListener('keydown', () => {
@@ -15,8 +15,10 @@ setInterval(() => {
 }, 500);
 
 worker.addEventListener('message', function(e) {
+  const { string, value, className } = e.data;
   const p = document.createElement("p");
-  const node = document.createTextNode(e.data);
+  const node = document.createTextNode(`${value} - ${string}`);
+  p.className = className;
   p.appendChild(node);
   logs.appendChild(p);
 }, false);
