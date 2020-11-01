@@ -1,0 +1,15 @@
+{
+  "name": "credit",
+  "version": "1.0.0",
+  "description": "Test work with web workers and js security",
+  "main": "index.html",
+  "scripts": {
+    "dev": "browser-sync start --server --files ."
+  },
+  "author": "VladislavLypivets",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "2.26.13",
+    "local-web-server": "4.2.1"
+  }
+}
