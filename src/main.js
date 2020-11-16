@@ -1,5 +1,6 @@
 const textArea = document.getElementById('textarea');
 const logs = document.getElementById('logs');
+const output = document.getElementById('output');
 const worker = new Worker("./src/worker.js");
 let textAreaModified = false;
 
@@ -11,6 +12,7 @@ setInterval(() => {
   if (textarea.value && textAreaModified) {
     textAreaModified = false;
     worker.postMessage(textarea.value);
+    output.innerHTML = textarea.value;
   }
 }, 500);
 

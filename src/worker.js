@@ -3,8 +3,13 @@ self.addEventListener('message', function(e) {
   self.postMessage({ ...check, value: e.data });
 }, false);
 
+const dangerStrings = [
+  '<script',
+  'onerror'
+];
+
 function checkXss(string) {
-  if (string.indexOf('<script') !== -1) {
+  if (dangerStrings.find((str) => string.includes(str))) {
     return { string: 'string is danger', className: 'danger' };
   }
   return { string: 'string is save', className: 'success' }
