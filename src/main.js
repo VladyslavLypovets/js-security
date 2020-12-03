@@ -12,7 +12,6 @@ setInterval(() => {
   if (textarea.value && textAreaModified) {
     textAreaModified = false;
     worker.postMessage(textarea.value);
-    output.innerHTML = textarea.value;
   }
 }, 500);
 
@@ -23,4 +22,7 @@ worker.addEventListener('message', function(e) {
   p.className = className;
   p.appendChild(node);
   logs.appendChild(p);
+  if (className === 'success') {
+    output.innerHTML = value;
+  }
 }, false);
